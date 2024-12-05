@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+<h1>Blog Posts</h1>
+<a href="{% url 'create_post' %}" class="btn btn-primary mb-3">Create New Post</a>
+<ul class="list-group">
+    {% for post in posts %}
+    <li class="list-group-item">
+        <h5>{{ post.title }}</h5>
+        <a href="{% url 'post_detail' post.id %}" class="btn btn-sm btn-info">View</a>
+        <a href="{% url 'edit_post' post.id %}" class="btn btn-sm btn-warning">Edit</a>
+        <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-danger">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

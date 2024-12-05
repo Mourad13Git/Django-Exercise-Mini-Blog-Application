@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Add Comment{% endblock %}
+
+{% block content %}
+<h1>Add a Comment</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" name="author" id="author" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="text" class="form-label">Comment</label>
+        <textarea name="text" id="text" class="form-control" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Comment</button>
+    <a href="{% url 'post_detail' post.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Django
+*.sqlite3
+db.sqlite3
+*/migrations/
+media/
+
+# Environment Variables
+.env
+
+# Others
+.DS_Store
+*.log
+*.bak
